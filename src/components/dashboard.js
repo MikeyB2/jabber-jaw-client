@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 import { fetchProtectedData } from '../actions/protected-data';
 
-
 import Chatkit from '@pusher/chatkit-client';
 import MessageList from './MessageList';
 import SendMessageForm from './SendMessageForm';
@@ -48,8 +47,8 @@ export class Dashboard extends React.Component {
                 </div>
                 <ChannelList />
                 <MessageList />
-                <SendMessageForm />
                 <NewChannelForm />
+                <SendMessageForm />
             </div>
         );
     }

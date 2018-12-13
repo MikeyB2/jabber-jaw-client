@@ -31,8 +31,8 @@ html, body {
 
 .button {
   display: inline-block;
-  padding: 15px 25px;
-  font-size: 24px;
+  padding: 8px 30px;
+  font-size: 20px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
@@ -61,10 +61,11 @@ html, body {
   border: 1px solid #ff7c00;
 }
 
-.navbar {
-  width: 100%;
-  background-color: rgb(185, 185, 185);
-  overflow: auto;
+.chatBubble {
+  float: left;
+  height: 30px;
+  width: 30px;
+  padding: 10px;
 }
 
 .navbar a {
@@ -77,6 +78,7 @@ html, body {
 
 .navbar a:hover {
   background-color: #000;
+  color: #ff7c00;
 }
 
 .active {
@@ -90,12 +92,13 @@ html, body {
   }
 }
 
-.chatBubble {
-  float: left;
-  height: 30px;
-  width: 30px;
-  padding: 10px;
+.navbar {
+  width: 100%;
+  background-color: rgb(185, 185, 185);
+  overflow: auto;
+  grid-area: b;
 }
+
 .new-room-form {
   grid-area: n;
 }
@@ -115,9 +118,9 @@ html, body {
 .dashboard{
   display: grid;
   height: 100%;
+  text-align: left;
   grid-template-areas: 
-      "r m m m m m"
-      "r m m m m m"
+      "b b b b b b"
       "r m m m m m"
       "r m m m m m"
       "r m m m m m"
@@ -261,9 +264,17 @@ html, body {
   color: var(--main-text-color);
 }
 
-.help-text {
+/* .help-text {
   position: absolute;
   top: 10px;
+} */
+
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: rgb(185, 185, 185);
+  color: white;
+  text-align: center;
 }
-
-
