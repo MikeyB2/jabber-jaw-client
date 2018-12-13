@@ -14,12 +14,14 @@ export class HeaderBar extends React.Component {
         let logOutButton;
         if (this.props.loggedIn) {
             logOutButton = (
-                <button onClick={() => this.logOut()}>Log out</button>
+                <button className="button" onClick={() => this.logOut()}>Log out</button>
+                // <a href="#" onClick={() => this.logOut()}><i class="fa fa-fw fa-user"></i> Log Out</a>
             );
         }
         return (
             <div className="header-bar">
-                <h1>Jabber Jaw Logo</h1>
+                <h1>Welcome to </h1>
+                <img src="jabberJawLogo.png" alt="Jabber Jaw Logo" />
                 {logOutButton}
             </div>
         );
