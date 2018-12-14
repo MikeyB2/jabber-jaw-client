@@ -120,7 +120,9 @@ html, body {
   height: 100%;
   text-align: left;
   grid-template-areas: 
-      "b b b b b b"
+      
+      "r m m m m m"
+      "r m m m m m"
       "r m m m m m"
       "r m m m m m"
       "r m m m m m"
@@ -136,6 +138,7 @@ html, body {
   background-color: var(--main-color);
   overflow: scroll;
   height: 100%;
+  border: 1px solid  rgb(185, 185, 185);
 }
 
 .rooms-list > ul {
@@ -168,6 +171,7 @@ html, body {
   padding: 0 5px;
   background: var(--secondary-color);
   color: var(--main-text-color);
+  border: 1px solid  rgb(185, 185, 185);
 }
 
 .new-room-form form {
@@ -230,6 +234,7 @@ html, body {
   height: 100%;
   overflow: scroll;
   background: var(--secondary-color);
+  border: 1px solid  rgb(185, 185, 185);
 }
 
 .message-list .join-room {
@@ -244,6 +249,7 @@ html, body {
 .send-message-form {
   background: var(--send-message-form);
   display: flex;
+  border: 1px solid  rgb(185, 185, 185);
 }
 
 .send-message-form input {
@@ -270,6 +276,7 @@ html, body {
 } */
 
 .footer {
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;

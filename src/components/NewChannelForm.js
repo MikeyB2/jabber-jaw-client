@@ -4,7 +4,6 @@ class NewChannelForm extends React.Component {
 	render() {
 		return (
 			<div className="new-room-form">
-				<h1>New Channel From Component</h1>
 				<form>
 					<input
 						type="text"
