@@ -12,6 +12,6 @@ deploy:
   provider: heroku
   api_key:
     secure: RTFkA9HgsNAShqA+G/z2jwJ33q4I/TFjlX/hGkCQbUXz3osrEItfAtceQSHuwfLGYWVwnjK5nHVufFUFQ7ClpsUBsqzYoJ4nJ9HOz+dXnZDoZwDHs4hDxsGorAo3tPMiNCleGX2AN2ts9CC6cRkHLWrSN4CxkNe8iQmIukEw520Meue6jI38MQCScON8sQdUOkk1b/F4ePZyNlAuFTNR5JLQMw2v8FVDsPfXdYKFXGAXC0x9hM93ei80SeVE1xUhx2BGoXkAuD/6cjGs7Aks4jB9jx1mZ+L8zxb3lvGzywoKC9JBosI29n2Gobm2oKD1U96p6s9tDk2UFNOPZjYEXQHs0rOrLFYPMv6HOcPdxv45KDoLvvBKbmazZkZ36YBEWPYlpTF1+Y4oAc8EYuYYLXc2llyytFhpuVJAwutCs0KYXGte4LK5pC/1x84Q6j7rTjLb/s29icWWkzJbcnVU39eRVYBP1KDuoeajYbTaUwA5bacBby9Ni89qEN2L/FyLaaZ8B3OLINQ247S1aTpH7C27q4PGFEnc3Z+xMoNaXtMOcPGXLaNHf0/lCQjHgytwZAlb9O9Ug1lgaLEmqqdOQpRb3i8r6o0ZhCMuSMqYJIGm2ICQHasMJfHjJDlncshy+Ptm9E8YndK/9y1pTKpXCSElR+qCzQLD6+qefY78M9g=
-  app: https://hidden-spire-38773.herokuapp.com/
+  app: https://jabber-jaw.herokuapp.com/
   on:
     repo: MikeyB2/jabber-jaw-client
