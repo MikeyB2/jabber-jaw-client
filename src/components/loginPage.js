@@ -12,6 +12,7 @@ export function LoginPage(props) {
 
     return (
         <div className="home">
+            <h2>Welcome back to Jabber Jaw</h2>
             <LoginForm />
             <Link to="/register" className="register">Register</Link>
         </div>

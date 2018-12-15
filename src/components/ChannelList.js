@@ -1,18 +1,21 @@
-import React from 'react';
+import React from 'react'
 
 class ChannelList extends React.Component {
 	render() {
-		console.log('Rooms: ', this.props.rooms)
+		const orderedRooms = [...this.props.rooms].sort((a, b) => a.id - b.id)
 		return (
 			<div className="rooms-list">
 				<ul>
-					<h3 className="help-text">Channels</h3>
-					{this.props.rooms.map(room => {
+					<h3>Channels:</h3>
+					{orderedRooms.map(room => {
+						const active = this.props.roomId === room.id ? "active" : "";
 						return (
-							<li key={room.id} className="room">
+							<li key={room.id} className={"room " + active}>
 								<a
 									onClick={() => this.props.subscribeToRoom(room.id)}
-									href="#"># {room.name}</a>
+									href="#">
+									# {room.name}
+								</a>
 							</li>
 						)
 					})}
@@ -22,5 +25,4 @@ class ChannelList extends React.Component {
 	}
 }
 
-
-export default ChannelList;
+export default ChannelList

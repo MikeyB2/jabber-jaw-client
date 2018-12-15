@@ -39,7 +39,7 @@ export class Dashboard extends React.Component {
             .then(currentUser => {
                 this.currentUser = currentUser
                 this.getRooms()
-                console.log('Successful connection')
+                console.log('Successful connection', currentUser)
             })
             .catch(err => {
                 console.log('Error on connection', err)
@@ -83,13 +83,14 @@ export class Dashboard extends React.Component {
                 })
                 this.getRooms()
             })
-            .catch(err => console.log('error on subscribing to room: ', err))
+            .catch(err => console.log('error on subscribing to channel: ', err))
     }
 
     render() {
         return (
             <div className="dashboard">
                 <ChannelList
+                    roomId={this.state.roomId}
                     subscribeToRoom={this.subscribeToRoom}
                     rooms={[...this.state.joinableRooms, ...this.state.joinedRooms]} />
                 <MessageList messages={this.state.messages} />

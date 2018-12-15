@@ -164,7 +164,9 @@ html, body {
 }
 
 .rooms-list .room.active a {
-  color: var(--secondary-color);
+  color: var(--send-message-form);
+  font-weight: 600;
+  text-decoration: none;
 }
 
 .new-room-form {
