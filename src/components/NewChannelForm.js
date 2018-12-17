@@ -31,7 +31,7 @@ class NewChannelForm extends React.Component {
 						type="text"
 						placeholder="Create a Channel"
 						required />
-					<button id="create-room-btn" type="submit"><i class="fas fa-plus"></i></button>
+					<button id="create-room-btn" type="submit"><i className="fas fa-plus"></i></button>
 				</form>
 			</div>
 

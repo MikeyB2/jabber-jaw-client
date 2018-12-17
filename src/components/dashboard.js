@@ -27,7 +27,7 @@ export class Dashboard extends React.Component {
 
     componentDidMount() {
         this.props.dispatch(fetchProtectedData());
-
+        console.log(this.state);
         const chatManager = new Chatkit.ChatManager({
             instanceLocator,
             userId: 'tester',

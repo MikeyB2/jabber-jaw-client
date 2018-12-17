@@ -6,8 +6,7 @@ export class HeaderBar extends React.Component {
 
         return (
             <div className="header-bar">
-                <h1>Welcome to </h1>
-                <img src="jabberJawLogo.png" alt="Jabber Jaw Logo" />
+                <img className="image" src="jabberJawLogo.png" alt="Jabber Jaw Logo" />
             </div>
         );
     }
