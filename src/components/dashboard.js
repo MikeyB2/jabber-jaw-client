@@ -22,6 +22,7 @@ export class Dashboard extends React.Component {
         this.sendMessage = this.sendMessage.bind(this)
         this.subscribeToRoom = this.subscribeToRoom.bind(this)
         this.getRooms = this.getRooms.bind(this)
+        this.createRoom = this.createRoom.bind(this)
     }
 
     componentDidMount() {
@@ -86,6 +87,14 @@ export class Dashboard extends React.Component {
             .catch(err => console.log('error on subscribing to channel: ', err))
     }
 
+    createRoom(name) {
+        this.currentUser.createRoom({
+            name
+        })
+            .then(room => this.subscribeToRoom(room.id))
+            .catch(err => console.log('error on createRoom: ', err))
+    }
+
     render() {
         return (
             <div className="dashboard">
@@ -93,9 +102,11 @@ export class Dashboard extends React.Component {
                     roomId={this.state.roomId}
                     subscribeToRoom={this.subscribeToRoom}
                     rooms={[...this.state.joinableRooms, ...this.state.joinedRooms]} />
-                <MessageList messages={this.state.messages} />
+                <MessageList
+                    messages={this.state.messages}
+                    roomId={this.state.roomId} />
                 <SendMessageForm sendMessage={this.sendMessage} />
-                <NewChannelForm />
+                <NewChannelForm createRoom={this.createRoom} />
 
             </div>
         );

@@ -19,6 +19,12 @@ html, body {
   font-weight: 200;
   color: 	#575758; 
   text-align: center;
+  
+  position: relative;
+}
+
+.app {
+  height: 100%;
 }
 
 #root {
@@ -101,6 +107,7 @@ html, body {
 
 .new-room-form {
   grid-area: n;
+  height: 50px;
 }
 
 .rooms-list {
@@ -113,11 +120,12 @@ html, body {
 
 .send-message-form {
   grid-area: f;
+  height: 50px;
 }
 
 .dashboard{
   display: grid;
-  height: 100%;
+  height: 80%;
   text-align: left;
   grid-template-areas: 
       
@@ -137,7 +145,6 @@ html, body {
   padding: 10px;
   background-color: var(--main-color);
   overflow: scroll;
-  height: 100%;
   border: 1px solid  rgb(185, 185, 185);
 }
 
@@ -184,14 +191,31 @@ html, body {
 }
 
 .new-room-form input {
-  width: 135px;
+  width: 75%;
+  height: 75%;
   background: var(--secondary-color);
+  padding: 15px 10px;
+  margin: 0;
 }
 
 .new-room-form button {
   background: var(--secondary-color);
   color: var(--main-text-color);
   border: 0;
+  width: 25%;  
+  height: 80%;
+  padding: 15px 10px;
+  margin: 0;
+} 
+
+.new-room-form button:hover {
+  background: var(--main-color);
+  border: 0;
+  border-radius: 10px;
+  width: 25%;  
+  height: 80%;
+  padding: 15px 10px;
+  margin: 0;
 } 
 
 .new-room-form input::placeholder {
@@ -233,10 +257,13 @@ html, body {
   box-sizing: border-box;
   padding-left: 6px;
   width: 100%;
-  height: 100%;
   overflow: scroll;
   background: var(--secondary-color);
   border: 1px solid  rgb(185, 185, 185);
+}
+
+.image {
+  text-align: center;
 }
 
 .message-list .join-room {
@@ -278,7 +305,7 @@ html, body {
 } */
 
 .footer {
-  position: fixed;
+  position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;

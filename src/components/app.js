@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Route, withRouter } from 'react-router-dom';
-import HeaderBar from './header-bar';
 import LandingPage from './landing-page';
 import LoginPage from './loginPage';
 import Dashboard from './dashboard';
@@ -42,11 +41,12 @@ export class App extends React.Component {
         clearInterval(this.refreshInterval);
     }
 
+
+
     render() {
         return (
             <div className="app">
                 <Navbar />
-                <HeaderBar />
                 <Route exact path="/" component={LandingPage} />
                 <Route exact path="/dashboard" component={Dashboard} />
                 <Route exact path="/register" component={RegistrationPage} />

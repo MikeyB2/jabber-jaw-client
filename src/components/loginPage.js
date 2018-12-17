@@ -1,4 +1,5 @@
 import React from 'react';
+import HeaderBar from './header-bar';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 
@@ -11,10 +12,13 @@ export function LoginPage(props) {
     }
 
     return (
-        <div className="home">
-            <h2>Welcome back to Jabber Jaw</h2>
-            <LoginForm />
-            <Link to="/register" className="register">Register</Link>
+        <div>
+            <HeaderBar />
+            <div className="home">
+                <h2>Welcome back to Jabber Jaw</h2>
+                <LoginForm />
+                <Link to="/register" className="register">Register</Link>
+            </div>
         </div>
     );
 }

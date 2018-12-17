@@ -4,20 +4,15 @@ import './modal.css';
 export class Modal extends React.Component {
 	render() {
 		return (
-			<div className="modal">
-				<button id="myBtn">Open Modal</button>
-
-				{/* The Modal  */}
-				<div id="myModal" class="modal">
-
-					{/* Modal content */}
-					<div class="modal-content">
-						<span class="close">&times;</span>
-						<p>Some text in the Modal..</p>
-					</div>
-
-				</div>
-			</div>
+			<div>test</div>
+			// <div>
+			// 	<div className="modal-overlay-div" style={overlayStyle} />
+			// 	<div className="modal-content-div" style={contentStyle} onClick={this.onOverlayClick.bind(this)}>
+			// 		<div className="modal-dialog-div" style={dialogStyle} onClick={this.onDialogClick}>
+			// 			{this.props.children}
+			// 		</div>
+			// 	</div>
+			// </div>
 		);
 	}
 };
