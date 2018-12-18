@@ -27,15 +27,16 @@ export class Dashboard extends React.Component {
 
     componentDidMount() {
         this.props.dispatch(fetchProtectedData());
-        console.log(this.state);
+        const username = localStorage.getItem('username')
         const chatManager = new Chatkit.ChatManager({
             instanceLocator,
-            userId: 'tester',
+            userId: username,
             tokenProvider: new Chatkit.TokenProvider({
                 url: tokenUrl
             })
         })
 
+        console.log('user info: ', chatManager);
         chatManager.connect()
             .then(currentUser => {
                 this.currentUser = currentUser
