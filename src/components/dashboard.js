@@ -36,12 +36,12 @@ export class Dashboard extends React.Component {
             })
         })
 
-        console.log('user info: ', chatManager);
+
         chatManager.connect()
             .then(currentUser => {
                 this.currentUser = currentUser
                 this.getRooms()
-                console.log('Successful connection', currentUser)
+                console.log('Successful connection')
             })
             .catch(err => {
                 console.log('Error on connection', err)
@@ -73,7 +73,6 @@ export class Dashboard extends React.Component {
             roomId: roomId,
             hooks: {
                 onMessage: message => {
-                    console.log('message: ', message);
                     this.setState({
                         messages: [...this.state.messages, message]
                     })

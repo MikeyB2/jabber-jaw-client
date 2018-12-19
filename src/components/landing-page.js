@@ -14,8 +14,8 @@ export function LandingPage(props) {
             <HeaderBar />
             <div className="home">
                 <p>Jabber Jaw is a Messaging app that lets you create your own channel/room.</p>
-                <p>While keeping you intouch with friends and family whenever you need to.</p>
-                <p>Click the Demo Button below to try a demo of Jabber Jaw</p>
+                <p>Making it easier for you to keep intouch with friends and family whenever or wherever you can.</p>
+                <p>Click the Demo Button below to try a demo of Jabber Jaw.</p>
                 <button className="button">DEMO</button>
             </div>
         </div >
