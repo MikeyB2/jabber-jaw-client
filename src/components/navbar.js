@@ -1,10 +1,10 @@
 import React from 'react';
-import Modal from './modal';
 import { connect } from 'react-redux';
 import { clearAuth } from '../actions/auth';
 import { clearAuthToken, clearUsername } from '../local-storage';
 
 class Navbar extends React.Component {
+
 
     logOut() {
         this.props.dispatch(clearAuth());
@@ -16,7 +16,7 @@ class Navbar extends React.Component {
         if (this.props.loggedIn) {
             logOutNav = (
                 <div>
-                    <a className="active" href="/"><i className="fa fa-fw fa-home"></i> Home</a>
+                    <a className="active" href="/"><i className="fa fa-fw fa-home"></i> Dashboard</a>
                     <a><i className="fa fa-fw fa-user"></i> Profile</a>
                     <a><i className="fa fa-fw fa-info-circle"></i>About</a>
                     <a onClick={() => this.logOut()}><i className="fa fa-fw fa-sign-out-alt"></i> Log Out</a>

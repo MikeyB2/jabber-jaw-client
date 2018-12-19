@@ -31,8 +31,12 @@ html, body {
   height: 100%;
 }
 
+.home p {
+  font-size: 24px;
+}
+
 .register:hover {
-  color: #ff7c00;
+  color: var(--main-color);
 }
 
 .button {
@@ -52,13 +56,13 @@ html, body {
 }
 
 .button:hover {
-  background-color: #ff7c00;
+  background-color: var(--main-color);
   color: #575758;
   border: 1px solid #575758;
 }
 
 .button:active {
-  background-color: #ff7c00;
+  background-color: var(--main-color);
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
@@ -69,7 +73,7 @@ html, body {
 
 .chatBubble {
   float: left;
-  height: 30px;
+  height: 26px;
   width: 30px;
   padding: 10px;
 }
@@ -83,19 +87,22 @@ html, body {
 }
 
 .navbar a:hover {
-  background-color: #000;
-  color: #ff7c00;
+  background-color: var(--main-color);
+  border: 1px solid #ff7c00;
   cursor: pointer;
 }
 
 .active {
-  background-color: #ff7c00;
+  background-color: var(--main-color);
 }
 
 @media screen and (max-width: 500px) {
   .navbar a {
     float: none;
     display: block;
+  }
+  .chatBubble {
+    background-color: var(--secondary-text-color);
   }
 }
 
@@ -250,11 +257,20 @@ html, body {
   margin-bottom: 6px;
 }
 .message .message-text {
-  background: var(--main-color);
+  background: var(--main-text-color);
   color: var(--secondary-color);
   display: inline;
   padding: 4px 8px;
   border-radius: 8px;
+}
+
+.message .currentUser {
+  background: var(--main-tcolor);
+  color: var(--secondary-color);
+  display: inline;
+  padding: 4px 8px;
+  border-radius: 8px;
+  text-align: right;
 }
 
 .message-list {

@@ -20,7 +20,6 @@ class MessageList extends React.Component {
 		if (!this.props.roomId) {
 			return (
 				<div className="message-list">
-					<img className="image" src="jabberJawLogo.png" alt="Jabber Jaw Logo" />
 					<div className="join-room">
 						&larr; Join a Channel or Create One of your own!
 					</div>

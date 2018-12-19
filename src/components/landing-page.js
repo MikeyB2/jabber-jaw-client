@@ -15,8 +15,10 @@ export function LandingPage(props) {
             <div className="home">
                 <p>Jabber Jaw is a Messaging app that lets you create your own channel/room.</p>
                 <p>While keeping you intouch with friends and family whenever you need to.</p>
+                <p>Click the Demo Button below to try a demo of Jabber Jaw</p>
+                <button className="button">DEMO</button>
             </div>
-        </div>
+        </div >
     );
 }
 

@@ -63,6 +63,7 @@ export class Dashboard extends React.Component {
         this.currentUser.sendMessage({
             text,
             roomId: this.state.roomId,
+            className: "currentUser",
         })
     }
 
@@ -105,7 +106,8 @@ export class Dashboard extends React.Component {
                     rooms={[...this.state.joinableRooms, ...this.state.joinedRooms]} />
                 <MessageList
                     messages={this.state.messages}
-                    roomId={this.state.roomId} />
+                    roomId={this.state.roomId}
+                    className={this.state.className} />
                 <SendMessageForm sendMessage={this.sendMessage} />
                 <NewChannelForm createRoom={this.createRoom} />
 
