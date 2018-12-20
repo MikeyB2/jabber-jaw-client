@@ -3,7 +3,7 @@ import { SubmissionError } from 'redux-form';
 
 import { API_BASE_URL } from '../config';
 import { normalizeResponseErrors } from './utils';
-import { saveAuthToken, clearAuthToken, saveUsername, clearUsername } from '../local-storage';
+import { saveAuthToken, clearAuthToken } from '../local-storage';
 
 export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';
 export const setAuthToken = authToken => ({
@@ -49,14 +49,7 @@ const storeAuthInfo = (authToken, dispatch) => {
 };
 
 const authChatuser = (username) => {
-    console.log('DID AUTH USER WORK!:', username)
     localStorage.setItem('username', username)
-    //  const authData = chatkit.authenticate({
-    //     userId: req.query.user_id
-    // });
-
-    // res.status(authData.status)
-    //    .send(authData.body);
 }
 
 export const login = (username, password) => dispatch => {
