@@ -6,12 +6,13 @@ import Modal from 'react-modal';
 
 const customStyles = {
     content: {
-        top: '50%',
-        left: '50%',
+        top: '20%',
+        left: '80%',
         right: 'auto',
         bottom: 'auto',
-        marginRight: '-50%',
-        transform: 'translate(-50%, -50%)'
+        marginRight: '-30%',
+        transform: 'translate(-50%, -50%)',
+
     }
 };
 
@@ -50,6 +51,9 @@ class Navbar extends React.Component {
 
     openModal() {
         this.setState({ modalIsOpen: true });
+        // getUser() {
+        //     console.log('user: ', user)
+        // }
     }
 
     afterOpenModal() {
@@ -60,6 +64,8 @@ class Navbar extends React.Component {
     closeModal() {
         this.setState({ modalIsOpen: false });
     }
+
+
 
 
     render() {
@@ -81,7 +87,7 @@ class Navbar extends React.Component {
                             <div>Username: {username}</div>
                             <div>Name: First name last name</div>
                             <div>Email: email@example.com</div>
-                            <a href="#"><i class="fas fa-times-circle" onClick={this.closeModal}></i></a>
+                            <a href="nolink"><i className="fas fa-times-circle" onClick={this.closeModal}></i></a>
 
                         </Modal>
 

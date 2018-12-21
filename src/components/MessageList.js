@@ -12,7 +12,7 @@ class MessageList extends React.Component {
 	componentDidUpdate() {
 		if (this.shouldScrollToBottom) {
 			const node = ReactDOM.findDOMNode(this)
-			node.scrollToop == node.scrollHeight
+			node.scrollTop = node.scrollHeight
 		}
 	}
 

@@ -8,15 +8,11 @@ class DemoButton extends React.Component {
         this.handleClick = this.handleClick.bind(this);
 
     }
-
-
-
     handleClick() {
         const demoUser = {
             username: 'demoUser',
             password: '1234567890',
         }
-        console.log(demoUser);
         return this.props.dispatch(login(demoUser.username, demoUser.password));
     };
 

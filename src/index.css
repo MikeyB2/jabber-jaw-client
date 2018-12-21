@@ -21,6 +21,9 @@ html, body {
   text-align: center;
   margin-bottom: 100px;
   position: relative;
+  box-sizing: border-box;
+  
+  width: 100%;
 }
 
 .app {
@@ -132,7 +135,6 @@ html, body {
     background-color: rgb(185, 185, 185);
   }
   .topnav #myLinks {
-    display: none;
     width: 100%;
   }
   
@@ -143,6 +145,48 @@ html, body {
     right: 0;
     top: 0;
   }
+}
+
+@media screen and (max-width: 600px) {
+
+  .dashboard{
+    display: grid;
+    height: 80%;
+    text-align: left;
+    grid-template-areas: 
+        
+        "r r r r r r"
+        "n n n n n n"
+        "m m m m m m"
+        "m m m m m m"
+        "m m m m m m"
+        "f f f f f f";
+  }
+
+  .new-room-form {
+    grid-area: n;
+  }
+
+  .send-message-form {
+    grid-area: f;
+  }
+
+  .new-room-form input {
+    height: 75%;
+    background: var(--secondary-color);
+    margin: 0;
+  }
+  
+  .new-room-form button {
+    background: var(--secondary-color);
+    color: var(--main-text-color);
+    border: 0;
+    width: 25%;  
+    height: 80%;
+    padding: 15px 10px;
+    margin: 0;
+  } 
+
 }
 
 .navbar {
@@ -159,11 +203,6 @@ html, body {
   width: 60%;
 }
 
-.new-room-form {
-  grid-area: n;
-  height: 50px;
-}
-
 .rooms-list {
   grid-area: r;
 }
@@ -172,15 +211,18 @@ html, body {
   grid-area: m;
 }
 
-.send-message-form {
-  grid-area: f;
-  height: 50px;
-}
 
+
+.new-room-form:hover, .send-message-form:hover {
+  border: 1px solid var(--main-color);
+}
+@media screen and (min-width: 601px) {
 .dashboard{
   display: grid;
   height: 80%;
   text-align: left;
+  /* grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 60px; */
   grid-template-areas: 
       
       "r m m m m m"
@@ -189,6 +231,18 @@ html, body {
       "r m m m m m"
       "r m m m m m"
       "n f f f f f";
+}
+
+.new-room-form {
+  grid-area: n;
+  height: 50px;
+}
+
+.send-message-form {
+  grid-area: f;
+  height: 50px;
+}
+
 }
 
 
@@ -237,6 +291,7 @@ html, body {
   
 }
 
+
 .new-room-form {
   padding: 0 5px;
   background: var(--secondary-color);
@@ -252,7 +307,7 @@ html, body {
 }
 
 .new-room-form input {
-  width: 75%;
+  /* width: 75%; */
   height: 75%;
   background: var(--secondary-color);
   margin: 0;
@@ -294,6 +349,7 @@ html, body {
 .new-room-form button {
   border: 0;
 }
+
 
 .message {
   margin: 15px 0;

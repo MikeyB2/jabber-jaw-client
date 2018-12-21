@@ -5,15 +5,16 @@ class ChannelList extends React.Component {
 		const orderedRooms = [...this.props.rooms].sort((a, b) => a.id - b.id)
 		return (
 			<div className="rooms-list">
-				<ul>
-					<h3>Channels:</h3>
+				<h3>Choose Your Channel</h3>
+				<hr></hr>
+				<ul className="channel-list">
 					{orderedRooms.map(room => {
 						const active = this.props.roomId === room.id ? "active" : "";
 						return (
 							<li key={room.id} className={"room " + active}>
 								<a
 									onClick={() => this.props.subscribeToRoom(room.id)}
-									href="#">
+									href="nolink">
 									# {room.name}
 								</a>
 							</li>

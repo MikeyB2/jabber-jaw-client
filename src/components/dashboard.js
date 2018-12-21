@@ -40,6 +40,9 @@ export class Dashboard extends React.Component {
         chatManager.connect()
             .then(currentUser => {
                 this.currentUser = currentUser
+                // TODO: show users online 
+                // console.log(this.currentUser.rooms[0].userIds)
+                // ^^^^^^^^^^^
                 this.getRooms()
                 console.log('Successful connection')
             })
@@ -76,7 +79,13 @@ export class Dashboard extends React.Component {
                     this.setState({
                         messages: [...this.state.messages, message]
                     })
-                }
+                },
+                // Todo: Getting typing and stop typing notifications
+                // onUserStartedTyping: user => {
+
+
+                // }
+                //^^^^^^^^^^^^^^^^^^^^^^^^^^
             }
         })
             .then(room => {
@@ -87,10 +96,14 @@ export class Dashboard extends React.Component {
             })
             .catch(err => console.log('error on subscribing to channel: ', err))
     }
-
-    createRoom(name) {
+    // createRoom(name, isPrivate)
+    createRoom(name, isPrivate) {
+        console.log('name: ', name);
+        // console.log('private: ', isPrivate);
         this.currentUser.createRoom({
-            name
+            name,
+            // Todo: add private rooms 
+            private: isPrivate
         })
             .then(room => this.subscribeToRoom(room.id))
             .catch(err => console.log('error on createRoom: ', err))
@@ -127,12 +140,3 @@ const mapStateToProps = state => {
 };
 
 export default requiresLogin()(connect(mapStateToProps)(Dashboard));
-
-
-{/* <div className="dashboard-username">
-                    Username: {this.props.username}
-                </div>
-                <div className="dashboard-name">Name: {this.props.name}</div>
-                <div className="dashboard-protected-data">
-                    Protected data: {this.props.protectedData}
-                </div> */}
