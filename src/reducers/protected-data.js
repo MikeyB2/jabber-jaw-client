@@ -8,7 +8,7 @@ const initialState = {
     error: null
 };
 
-export const JabberReducer = (state = initialState, action) => {
+export default function JabberReducer(state = initialState, action) {
     if (action.type === FETCH_PROTECTED_DATA_SUCCESS) {
         return Object.assign({}, state, {
             data: action.data,

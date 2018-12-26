@@ -13,7 +13,7 @@ const initialState = {
     error: null
 };
 
-export const JabberReducer = (state = initialState, action) => {
+export default function JabberReducer(state = initialState, action) {
     if (action.type === SET_AUTH_TOKEN) {
         return Object.assign({}, state, {
             authToken: action.authToken
