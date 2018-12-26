@@ -14,7 +14,7 @@ class ChannelList extends React.Component {
 							<li key={room.id} className={"room " + active}>
 								<a
 									onClick={() => this.props.subscribeToRoom(room.id)}
-									href="nolink">
+									href="#">
 									# {room.name}
 								</a>
 							</li>

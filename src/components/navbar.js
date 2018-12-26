@@ -87,7 +87,7 @@ class Navbar extends React.Component {
                             <div>Username: {username}</div>
                             <div>Name: First name last name</div>
                             <div>Email: email@example.com</div>
-                            <a href="nolink"><i className="fas fa-times-circle" onClick={this.closeModal}></i></a>
+                            <a href="#"><i className="fas fa-times-circle" onClick={this.closeModal}></i></a>
 
                         </Modal>
 
