@@ -6,10 +6,3 @@ cache:
 env:
   matrix:
   - CI=true
-deploy:
-  provider: heroku
-  api_key:
-    secure: Wj1ytEMp8CMU/q/JfC0/n84WdKvB2YYe/+K0mLqjtn1ZePzTnu8GwS7LBOeEFDY9D5c/eil4XQi/+X1Q71xZVki2ytJEeIoB4btizL6ZV6D84ypx2ewOBJu9qdK93OSuatRKwsRN3zk1nTGYUjWBkNwJD0Sp3p+hsmwp6BLmEzqEmINmgTcUr1vB/t7UHfmC5rldZtW6QUSkJ6kyWqsWOzqppwTmBfw1QgjnBTqNf/Wv6O0KZHdbTkSAfLSAFBu/o4XAMcmVFhCrRT+1INbLcReJBK2NXc4bcV/LX8F6umb6Fd9eIsdWDLf30avZYtcVMpd4hDSqtTjJXJQ2Pz9MCbIUE+LEY3+9TxOs30kncdUJge1wA2mS0Eg0pW95xqdqAQtcVMH6WNRWndWmHu+iCFyePLLX+d5K+YJkS9DFD3glgJujc6zLHxFRdkJp1jbChktoFMC47GhuUKNx/7O9ZwlGyiV9kEC575mHu8QkOP0fRVfJNUFiV026LsGDCt6n5r0ho2lXuMwimYCpcEGQo+YgN0QPzEMVglNJBtHgLisQV48nuEPuxiLa7OsrGeVJxMuSpOwyvjK70VzEVtN665Zs/FX15RvfwkUDa2gwanpeg7j/hp9BUP8OYIF9e99MmkUrUsbi9YzIsnUNIJt87KIvzeniTjtOvC33enc4Jgg=
-  app: https://agile-sands-23938.herokuapp.com/
-  on:
-    repo: MikeyB2/jabber-jaw-client
