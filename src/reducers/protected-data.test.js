@@ -1,4 +1,4 @@
-import { JabberReducer } from './protected-data';
+import JabberReducer from './protected-data';
 import {
     fetchProtectedDataSuccess,
     fetchProtectedDataError
