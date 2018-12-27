@@ -17,6 +17,7 @@ const customStyles = {
 };
 
 class Navbar extends React.Component {
+
     constructor() {
         super();
 
@@ -30,17 +31,9 @@ class Navbar extends React.Component {
 
         this.handleClick = this.handleClick.bind(this)
     }
-    // handleClick = (e) {
-    //     let x = document.getElementById('myLinks');
-    //     if (x.style.display === 'block') {
-    //         x.style.display = 'none';
-    //     } else {
-    //         x.style.display = 'block';
-    //     }
-    // }
     handleClick = (e) => {
         e.preventDefault();
-        console.log('The link was clicked.');
+        console.log('The link was clicked.', e);
     };
 
     logOut() {
@@ -51,14 +44,11 @@ class Navbar extends React.Component {
 
     openModal() {
         this.setState({ modalIsOpen: true });
-        // getUser() {
-        //     console.log('user: ', user)
-        // }
+
     }
 
     afterOpenModal() {
-        // references are now sync'd and can be accessed.
-        this.subtitle.style.color = '#f00';
+        this.subtitle.style.color = '#575758';
     }
 
     closeModal() {
@@ -76,7 +66,7 @@ class Navbar extends React.Component {
                 <div className="topnav">
                     <div id="myLinks">
                         <a className="active" href="/"><i className="fa fa-fw fa-home"></i> Dashboard</a>
-                        <a onClick={this.openModal}><i className="fa fa-fw fa-user"></i> Profile</a>
+                        <a href="#" onClick={this.openModal}><i className="fa fa-fw fa-user"></i> Profile</a>
                         <Modal
                             isOpen={this.state.modalIsOpen}
                             onAfterOpen={this.afterOpenModal}
@@ -91,7 +81,7 @@ class Navbar extends React.Component {
 
                         </Modal>
 
-                        <a onClick={() => this.logOut()}><i className="fa fa-fw fa-sign-out-alt"></i> Log Out</a>
+                        <a href="#" onClick={() => this.logOut()}><i className="fa fa-fw fa-sign-out-alt"></i> Log Out</a>
                         <li className="currentUser"><strong>{username}</strong></li>
                     </div>
                 </div>

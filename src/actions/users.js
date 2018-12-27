@@ -4,6 +4,7 @@ import { normalizeResponseErrors } from './utils';
 
 const createChatId = (user) => {
     localStorage.setItem('username', user.username)
+    console.log('user info: ', user);
 
 }
 
