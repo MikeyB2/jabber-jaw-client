@@ -6,3 +6,10 @@ cache:
 env:
   matrix:
   - CI=true
+deploy:
+  provider: heroku
+  api_key:
+    secure: RzWY2dbu+F823YuEp18YEJniOYFqmC6KVtraoh7kX44ur6vckm1rSySdT7TnQTaGUhlCzUpEh83LH9SUla8RoF/xvLfa4zT5/H5AYfz1hmve6/5aVXqQuJs3NCCYCbi/4O3wb42PowfE8ErSBxEv3IbI9maXFet+YKQsx/RlfIjVrvQx699sKNx9wIRQRaAoRz3S6PAgge9mq63ZKDD3a2x9uGyMOaWpjFL3A2LPdRtw5GRasBayocy6gZrA/Kbb4tpSa44W9ZchNM2MMB7USBeD0PWaBCybV08K+pmAnEKju70+ELaOQvegKeG8G9n86evN8L9QxajywfOgXq9sU5xAVMt6Yuv65IIaX9zK2nT6EvTewklKQwcpu8icKrwh28rRGt43gUPpNyNS9J+pG2fclOMUCZNNmS7SmcqJ3neeKHIgAAWEld4uFgSWnlesYG2d18Ig2+Oow5ILEg2pwkZ3udhG4bgw1GkhHbEYPXvlAhK66XizgWO/m7XwkrOkqT6EnIZ+S+1rrTRKN0uaZXonnV+JC6iwAL4DxRv+4ySxnQ6yWDM9ju18imrE+CdXvmmxFESWN0A/lA47oMk96AYVVYT+5c6FD5sMMNZoRbYxvTzhXmb1gGD5T4E9WWw5TO4AXqKk6TU7DuonwArOOiE5he7CBnZGTLkBzBxVS2A=
+  app: https://jabber-jaw-client.herokuapp.com/
+  on:
+    repo: MikeyB2/jabber-jaw-client
