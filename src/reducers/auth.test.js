@@ -1,4 +1,4 @@
-import { JabberReducer } from './auth';
+import JabberReducer from './auth';
 import {
     setAuthToken,
     clearAuth,

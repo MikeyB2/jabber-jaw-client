@@ -11,7 +11,7 @@ class DemoButton extends React.Component {
     handleClick() {
         const demoUser = {
             username: 'demoUser',
-            password: 'Password1',
+            password: 'Password12',
         }
         return this.props.dispatch(login(demoUser.username, demoUser.password));
     };

@@ -32,7 +32,7 @@ export function LandingPage(props) {
                     <p>Then use the below Username and Password to login as another user to see how you can interact with other users.</p>
                     <DeomButton />
                     <p><strong>Username:</strong> Testuser</p>
-                    <p><strong>Password:</strong> Testuser1</p>
+                    <p><strong>Password:</strong> Testuser12</p>
 
                 </div>
             </div >

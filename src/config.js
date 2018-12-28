@@ -1,5 +1,5 @@
 export const API_BASE_URL =
-    process.env.REACT_APP_API_BASE_URL || 'http://localhost:8080/api';
+    process.env.REACT_APP_API_BASE_URL || 'https://jabber-jaw-server.herokuapp.com/api';
 
 
 const tokenUrl = "https://us1.pusherplatform.io/services/chatkit_token_provider/v1/2fc4afe9-9702-4b70-97b3-eb2c96b9ed53/token";

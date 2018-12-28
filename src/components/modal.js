@@ -25,14 +25,6 @@ class Modal extends React.Component {
             background: 'rgba(0, 0, 0, 0.3)'
         }
 
-        if (this.props.width && this.props.height) {
-            modalStyle.width = this.props.width + 'px'
-            modalStyle.height = this.props.height + 'px'
-            modalStyle.marginLeft = '-' + (this.props.width / 2) + 'px',
-                modalStyle.marginTop = '-' + (this.props.height / 2) + 'px',
-                modalStyle.transform = null
-        }
-
         if (this.props.style) {
             for (let key in this.props.style) {
                 modalStyle[key] = this.props.style[key]
@@ -53,6 +45,7 @@ class Modal extends React.Component {
         )
     }
 
+
     close(e) {
         e.preventDefault()
 
@@ -61,4 +54,5 @@ class Modal extends React.Component {
         }
     }
 }
+
 export default Modal;

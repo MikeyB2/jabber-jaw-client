@@ -1,44 +1,43 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Jabber Jaw - Chat App
 
-## Available Scripts
+<!-- ![Screenshot of Chat App Page](https://github.com/MikeyB2/travis-ci/new/master/public/img/mealsSS.PNG) -->
 
-In the project directory, you can run:
+_website: https://jabber-jaw.herokuapp.com/_
 
-### `npm start`
+_server website: https://jabber-jaw-server.herokuapp.com/_
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+_client GitHub: https://github.com/MikeyB2/jabber-jaw-client_
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+_server Github: https://github.com/MikeyB2/jabber-jaw-server_
 
-### `npm test`
+Jabber Jaw is a Chat App that allows you to chat with your friends or family.  Either 1-on-1 or in a Channel/room.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+After logging in or creating a user, a user has
+access to the dashboard that has a list of all available Channels to join.
 
-### `npm run build`
+## Channels
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+You can subscribe/join any of the rooms that are listed on the left or create your own.  After clicking on the room or creating a room you will be able to send messages to that room.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Messages
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+You can enter a message to send to the room by typing in the bottom send message input and hitting enter when done typing you message.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## New User/Register as a User
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+On the Landing page, new users can find a link up top to the login form and to create a new
+account you have to click the Register link below the login inputs.
+A the fields are required to set up an account.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Technology Used
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+This app utilizes HTML, CSS, Javascript, and JQuery.
 
-## Learn More
+The client-side utilizes React and Redux for the User Experience.  Also uses Chat-Kit to help setup the chat component.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The server-side utilizes javascript, Node, Express, MongoDB & Mongoose, morgan, body-parser, and cors for Restful API construction. Passport, bcryptjs, jsonwebtoken
+are used for JWT tokenization.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+For testing, chai, chai-http, faker, enzyme, and mocha
+are used.
