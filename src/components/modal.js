@@ -48,8 +48,8 @@ class Modal extends React.Component {
         return (
             <div>
                 <div style={modalStyle}>{this.props.children}</div>
-                <div style={backdropStyle} onClick={e => this.close(e)} />}
-          </div>
+                <div style={backdropStyle} onClick={e => this.close(e)} />
+            </div>
         )
     }
 

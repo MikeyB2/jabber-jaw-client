@@ -30,14 +30,7 @@ class Navbar extends React.Component {
 
         this.handleClick = this.handleClick.bind(this)
     }
-    // handleClick = (e) {
-    //     let x = document.getElementById('myLinks');
-    //     if (x.style.display === 'block') {
-    //         x.style.display = 'none';
-    //     } else {
-    //         x.style.display = 'block';
-    //     }
-    // }
+
     handleClick = (e) => {
         e.preventDefault();
         console.log('The link was clicked.');
@@ -51,13 +44,9 @@ class Navbar extends React.Component {
 
     openModal() {
         this.setState({ modalIsOpen: true });
-        // getUser() {
-        //     console.log('user: ', user)
-        // }
     }
 
     afterOpenModal() {
-        // references are now sync'd and can be accessed.
         this.subtitle.style.color = '#f00';
     }
 
@@ -71,6 +60,8 @@ class Navbar extends React.Component {
     render() {
         let logOutNav;
         const username = localStorage.getItem('username');
+        const Name = localStorage.getItem('Name');
+
         if (this.props.loggedIn) {
             logOutNav = (
                 <div className="topnav">
@@ -85,8 +76,8 @@ class Navbar extends React.Component {
                             contentLabel="Example Modal"
                         ><h2 ref={subtitle => this.subtitle = subtitle}>Profile</h2>
                             <div>Username: {username}</div>
-                            <div>Name: First name last name</div>
-                            <div>Email: email@example.com</div>
+                            <div>Name: {Name}</div>
+                            {/* <div>Email: email@example.com</div> */}
                             <a href="#"><i className="fas fa-times-circle" onClick={this.closeModal}></i></a>
 
                         </Modal>
