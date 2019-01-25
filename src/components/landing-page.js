@@ -2,7 +2,7 @@ import React from 'react';
 import HeaderBar from './header-bar';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import DeomButton from './demoButton';
+import DemoButton from './demoButton';
 
 export function LandingPage(props) {
     // If we are logged in redirect straight to the user's dashboard
@@ -30,7 +30,7 @@ export function LandingPage(props) {
                     <p>After you click the DEMO button please open another browser in another window.  </p>
                     <p>Either a different browser from the one you are currently using or use chrome incognito mode.</p>
                     <p>Then use the below Username and Password to login as another user to see how you can interact with other users.</p>
-                    <DeomButton />
+                    <DemoButton />
                     <p><strong>Username:</strong> Testuser</p>
                     <p><strong>Password:</strong> Testuser12</p>
 

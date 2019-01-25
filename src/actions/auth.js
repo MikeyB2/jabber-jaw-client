@@ -49,7 +49,8 @@ const storeAuthInfo = (authToken, dispatch) => {
 };
 
 const authChatuser = (username) => {
-    localStorage.setItem('username', username)
+    localStorage.setItem('username', username);
+    window.open(`${API_BASE_URL}/dashboard`);
 }
 
 export const login = (username, password) => dispatch => {

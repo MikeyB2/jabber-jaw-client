@@ -151,7 +151,7 @@ html, body {
 
   .dashboard{
     display: grid;
-    height: 80%;
+    height: 100%;
     text-align: left;
     grid-template-areas: 
         
@@ -200,7 +200,7 @@ html, body {
 
 
 .image {
-  width: 60%;
+  width: 35%;
 }
 
 .rooms-list {
@@ -219,12 +219,11 @@ html, body {
 @media screen and (min-width: 601px) {
 .dashboard{
   display: grid;
-  height: 80%;
+  height: 100%;
   text-align: left;
-  /* grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 60px; */
+  grid-template-columns: repeat(6, 1fr);
+  /* grid-template-rows:  60px; */
   grid-template-areas: 
-      
       "r m m m m m"
       "r m m m m m"
       "r m m m m m"
@@ -368,8 +367,8 @@ html, body {
   padding: 4px 8px;
   border-radius: 8px;
 }
-
-/* .message .currentUser {
+/* 
+.message .currentUser {
   background: var(--main-tcolor);
   color: var(--secondary-color);
   display: inline;

@@ -82,9 +82,11 @@ export class Dashboard extends React.Component {
                 },
                 // Todo: Getting typing and stop typing notifications
                 // onUserStartedTyping: user => {
-
-
-                // }
+                //  console.log(user.name, " started typing")
+                // },
+                // onUserStoppoedTyping: user => {
+                //  console.log(user.name, " stopped typing")
+                // },
                 //^^^^^^^^^^^^^^^^^^^^^^^^^^
             }
         })
