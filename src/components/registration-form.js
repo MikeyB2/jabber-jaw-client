@@ -30,13 +30,13 @@ export class RegistrationForm extends React.Component {
                     name="username"
                     validate={[required, nonEmpty, isTrimmed]}
                 />
-                {/* <label htmlFor="email">Email Address</label>
+                <label htmlFor="email">Email Address</label>
                 <Field
                     component={Input}
                     type="text"
                     name="email"
                     validate={[required, nonEmpty, isTrimmed]}
-                /> */}
+                />
                 <label htmlFor="firstName">First name</label>
                 <Field component={Input} type="text" name="firstName" />
                 <label htmlFor="lastName">Last name</label>

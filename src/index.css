@@ -55,6 +55,9 @@ html, body {
 #demo:hover {
   color: var(--main-color);
 }
+.register {
+  color: #666;
+}
 
 .register:hover {
   color: var(--main-color);

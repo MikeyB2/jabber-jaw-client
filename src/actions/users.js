@@ -3,9 +3,7 @@ import { API_BASE_URL } from '../config';
 import { normalizeResponseErrors } from './utils';
 
 const createChatId = (user) => {
-    console.log('user info: ', user);
     let Name = user.firstName + ' ' + user.lastName;
-    console.log('user name: ', Name);
     localStorage.setItem('username', user.username)
     localStorage.setItem('Name', Name)
 
