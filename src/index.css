@@ -196,11 +196,8 @@ html, body {
   width: 100%;
   background-color: rgb(185, 185, 185);
   overflow: auto;
-  grid-area: b;
   position: relative;
 }
-
-
 
 .image {
   width: 35%;
@@ -231,7 +228,7 @@ html, body {
       "r m m m m m"
       "r m m m m m"
       "r m m m m m"
-      "r m m m m m"
+      "r t t t t t"
       "n f f f f f";
 }
 
@@ -243,6 +240,11 @@ html, body {
 .send-message-form {
   grid-area: f;
   height: 50px;
+}
+
+.typingIndicator {
+  grid-area: t;
+  height: 30px;
 }
 
 }

@@ -12,15 +12,19 @@ class ChannelList extends React.Component {
 						const active = this.props.roomId === room.id ? "active" : "";
 						return (
 							<li key={room.id} className={"room " + active}>
+
 								<a
 									onClick={() => this.props.subscribeToRoom(room.id)}
 									href="#">
 									# {room.name}
 								</a>
 							</li>
+
 						)
 					})}
 				</ul>
+				<hr></hr>
+				<h2>Whos online</h2>
 			</div>
 		)
 	}

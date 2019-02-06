@@ -20,9 +20,16 @@ class NewChannelForm extends React.Component {
 	}
 
 	handlePrivate(e) {
-		this.setState({
-			private: e.target.value
-		})
+		if (e.target.value == "true") {
+			this.setState({
+				private: true
+			})
+		}
+		else {
+			this.setState({
+				private: false
+			})
+		}
 		console.log(this.state);
 	}
 
@@ -42,11 +49,11 @@ class NewChannelForm extends React.Component {
 						type="text"
 						placeholder="Enter Channel Name"
 						required />
-					{/* <label>Private Room</label>
+					<label>Private Room</label>
 					<input onClick={this.handlePrivate} type="radio" name="private" id="radioTrue" value="true" className="radio" />
 					<label htmlFor="radioTrue">Yes</label>
 					<input onClick={this.handlePrivate} type="radio" name="private" id="radioFalse" value="false" className="radio" />
-					<label htmlFor="radioFalse" checked>No</label> */}
+					<label htmlFor="radioFalse" checked>No</label>
 					<button id="create-room-btn" type="submit"><i className="fas fa-plus"></i></button>
 				</form>
 			</div>

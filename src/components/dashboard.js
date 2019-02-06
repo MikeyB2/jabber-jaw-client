@@ -17,7 +17,7 @@ export class Dashboard extends React.Component {
             roomId: null,
             messages: [],
             joinableRooms: [],
-            joinedRooms: []
+            joinedRooms: [],
         }
         this.sendMessage = this.sendMessage.bind(this)
         this.subscribeToRoom = this.subscribeToRoom.bind(this)
@@ -41,7 +41,7 @@ export class Dashboard extends React.Component {
             .then(currentUser => {
                 this.currentUser = currentUser
                 // TODO: show users online 
-                // console.log(this.currentUser.rooms[0].userIds)
+                // console.log(this.currentUser.logger)
                 // ^^^^^^^^^^^
                 this.getRooms()
                 console.log('Successful connection')
@@ -80,14 +80,6 @@ export class Dashboard extends React.Component {
                         messages: [...this.state.messages, message]
                     })
                 },
-                // Todo: Getting typing and stop typing notifications
-                // onUserStartedTyping: user => {
-                //  console.log(user.name, " started typing")
-                // },
-                // onUserStoppoedTyping: user => {
-                //  console.log(user.name, " stopped typing")
-                // },
-                //^^^^^^^^^^^^^^^^^^^^^^^^^^
             }
         })
             .then(room => {
@@ -122,7 +114,8 @@ export class Dashboard extends React.Component {
                     messages={this.state.messages}
                     roomId={this.state.roomId}
                     className={this.state.className} />
-                <SendMessageForm sendMessage={this.sendMessage} />
+                <SendMessageForm
+                    sendMessage={this.sendMessage} />
                 <NewChannelForm createRoom={this.createRoom} />
 
             </div>
