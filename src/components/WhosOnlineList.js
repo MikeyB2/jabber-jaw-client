@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react';
 
-class WhosOnlineList extends Component {
+class WhosOnlineList extends React.Component {
     renderUsers() {
+        console.log('users: ', this.props.users)
         return (
             <ul>
                 {this.props.users.map((user, index) => {
@@ -23,6 +24,7 @@ class WhosOnlineList extends Component {
     }
 
     render() {
+        console.log('users: ', this.props)
         if (this.props.users) {
             return this.renderUsers()
         } else {
@@ -31,7 +33,7 @@ class WhosOnlineList extends Component {
     }
 }
 
-class WhosOnlineListItem extends Component {
+class WhosOnlineListItem extends React.Component {
     render() {
         const styles = {
             li: {

@@ -18,11 +18,23 @@ export class Dashboard extends React.Component {
             messages: [],
             joinableRooms: [],
             joinedRooms: [],
+            users: [],
+            currentUser: {},
+            currentRoom: {},
+            usersWhoAreTyping: [],
         }
         this.sendMessage = this.sendMessage.bind(this)
         this.subscribeToRoom = this.subscribeToRoom.bind(this)
         this.getRooms = this.getRooms.bind(this)
         this.createRoom = this.createRoom.bind(this)
+        this.sendTypingEvent = this.sendTypingEvent.bind(this)
+    }
+
+    sendTypingEvent() {
+        console.log("typing event");
+        // this.state.currentUser
+        //     .isTypingIn({ roomId: this.state.currentRoom.id })
+        //     .catch(error => console.error('error', error))
     }
 
     componentDidMount() {
@@ -39,7 +51,9 @@ export class Dashboard extends React.Component {
 
         chatManager.connect()
             .then(currentUser => {
+                console.log('Currentuser: ', currentUser)
                 this.currentUser = currentUser
+                this.setState({ currentUser })
                 // TODO: show users online 
                 // console.log(this.currentUser.logger)
                 // ^^^^^^^^^^^
@@ -63,7 +77,7 @@ export class Dashboard extends React.Component {
     }
 
     sendMessage(text) {
-        this.currentUser.sendMessage({
+        this.state.currentUser.sendMessage({
             text,
             roomId: this.state.roomId,
             className: "currentUser",
@@ -80,23 +94,36 @@ export class Dashboard extends React.Component {
                         messages: [...this.state.messages, message]
                     })
                 },
+                onUserStartedTyping: user => {
+                    this.setState({
+                        usersWhoAreTyping: [...this.state.usersWhoAreTyping, user.name],
+                    })
+                },
+                onUserStoppedTyping: user => {
+                    this.setState({
+                        usersWhoAreTyping: this.state.usersWhoAreTyping.filter(
+                            username => username !== user.name
+                        ),
+                    })
+                },
+                // onPresenceChange: () => this.forceUpdate(),
+                // onUserJoined: () => this.forceUpdate(),
             }
         })
-            .then(room => {
+            .then(currentRoom => {
                 this.setState({
-                    roomId: room.id
+                    currentRoom,
+                    roomId: currentRoom.id
                 })
                 this.getRooms()
             })
+
             .catch(err => console.log('error on subscribing to channel: ', err))
     }
     // createRoom(name, isPrivate)
     createRoom(name, isPrivate) {
-        console.log('name: ', name);
-        // console.log('private: ', isPrivate);
         this.currentUser.createRoom({
             name,
-            // Todo: add private rooms 
             private: isPrivate
         })
             .then(room => this.subscribeToRoom(room.id))
@@ -104,18 +131,26 @@ export class Dashboard extends React.Component {
     }
 
     render() {
+
+        console.log('state users: ', this)
+        console.log('state currentRoom: ', this.state.currentRoom)
+
         return (
             <div className="dashboard">
                 <ChannelList
                     roomId={this.state.roomId}
                     subscribeToRoom={this.subscribeToRoom}
-                    rooms={[...this.state.joinableRooms, ...this.state.joinedRooms]} />
+                    rooms={[...this.state.joinableRooms, ...this.state.joinedRooms]}
+                    currentUser={this.state.currentUser}
+                    users={this.state.currentRoom.users}
+                />
                 <MessageList
                     messages={this.state.messages}
                     roomId={this.state.roomId}
                     className={this.state.className} />
                 <SendMessageForm
-                    sendMessage={this.sendMessage} />
+                    sendMessage={this.sendMessage}
+                    onChange={this.sendTypingEvent} />
                 <NewChannelForm createRoom={this.createRoom} />
 
             </div>

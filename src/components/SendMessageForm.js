@@ -1,8 +1,8 @@
 import React from 'react';
 
 class SendMessageForm extends React.Component {
-	constructor() {
-		super()
+	constructor(props) {
+		super(props)
 		this.state = {
 			message: ''
 		}
@@ -11,9 +11,13 @@ class SendMessageForm extends React.Component {
 	}
 
 	handleChange(e) {
+		// console.log(e.target.value);
 		this.setState({
 			message: e.target.value
 		})
+		// if (this.props.onChange) {
+		// 	this.props.handleChange()
+		// }
 	}
 
 	handleSubmit(e) {
