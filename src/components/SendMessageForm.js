@@ -36,6 +36,7 @@ class SendMessageForm extends React.Component {
 					value={this.state.message}
 					placeholder="Type your message and hit enter"
 					type="text" />
+				{/* <button id="" type="submit"><i class="fas fa-share-square"></i></button> */}
 			</form>
 		)
 	}

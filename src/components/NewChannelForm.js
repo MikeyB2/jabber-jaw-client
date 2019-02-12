@@ -43,18 +43,19 @@ class NewChannelForm extends React.Component {
 		return (
 			<div className="new-room-form">
 				<form onSubmit={this.handleSubmit}>
+					<button id="create-room-btn" type="submit"><i className="fas fa-plus"></i></button>
 					<input
 						value={this.state.roomName}
 						onChange={this.handleChange}
 						type="text"
 						placeholder="Enter Channel Name"
 						required />
-					<label>Private Room</label>
+					<div>Private Room</div>
 					<input onClick={this.handlePrivate} type="radio" name="private" id="radioTrue" value="true" className="radio" />
 					<label htmlFor="radioTrue">Yes</label>
 					<input onClick={this.handlePrivate} type="radio" name="private" id="radioFalse" value="false" className="radio" />
 					<label htmlFor="radioFalse" checked>No</label>
-					<button id="create-room-btn" type="submit"><i className="fas fa-plus"></i></button>
+
 				</form>
 			</div>
 

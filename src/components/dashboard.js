@@ -51,12 +51,14 @@ export class Dashboard extends React.Component {
 
         chatManager.connect()
             .then(currentUser => {
-                console.log('Currentuser: ', currentUser)
+                console.log('Currentuser: ', currentUser.presenceStore.store)
                 this.currentUser = currentUser
                 this.setState({ currentUser })
                 // TODO: show users online 
-                // console.log(this.currentUser.logger)
-                // ^^^^^^^^^^^
+
+                // onPresenceChange: () => this.forceUpdate(),
+                // onUserJoined: () => this.forceUpdate(),
+                console.log("current user logger: ", this.currentUser);
                 this.getRooms()
                 console.log('Successful connection')
             })
@@ -106,8 +108,8 @@ export class Dashboard extends React.Component {
                         ),
                     })
                 },
-                // onPresenceChange: () => this.forceUpdate(),
-                // onUserJoined: () => this.forceUpdate(),
+                onPresenceChange: () => this.forceUpdate(),
+                onUserJoined: () => this.forceUpdate(),
             }
         })
             .then(currentRoom => {
