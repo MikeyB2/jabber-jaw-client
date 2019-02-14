@@ -11,6 +11,7 @@ import NewChannelForm from './NewChannelForm';
 
 export class Dashboard extends React.Component {
 
+
     constructor() {
         super();
         this.state = {
@@ -18,7 +19,6 @@ export class Dashboard extends React.Component {
             messages: [],
             joinableRooms: [],
             joinedRooms: [],
-            users: [],
             currentUser: {},
             currentRoom: {},
             usersWhoAreTyping: [],
@@ -37,6 +37,8 @@ export class Dashboard extends React.Component {
         //     .catch(error => console.error('error', error))
     }
 
+
+
     componentDidMount() {
         this.props.dispatch(fetchProtectedData());
         const username = localStorage.getItem('username')
@@ -49,18 +51,26 @@ export class Dashboard extends React.Component {
         })
 
 
+
         chatManager.connect()
             .then(currentUser => {
-                console.log('Currentuser: ', currentUser.presenceStore.store)
+                // console.log('Currentuser: ', currentUser.presenceStore.store)
                 this.currentUser = currentUser
                 this.setState({ currentUser })
                 // TODO: show users online 
 
                 // onPresenceChange: () => this.forceUpdate(),
                 // onUserJoined: () => this.forceUpdate(),
-                console.log("current user logger: ", this.currentUser);
+                // console.log("current user logger: ", this.currentUser);
                 this.getRooms()
                 console.log('Successful connection')
+                return currentUser.subscribeToRoom({
+                    roomId: '19376565',
+                    messageLimit: 100,
+                })
+            })
+            .then(currentRoom => {
+                this.setState({ currentRoom })
             })
             .catch(err => {
                 console.log('Error on connection', err)
@@ -132,10 +142,15 @@ export class Dashboard extends React.Component {
             .catch(err => console.log('error on createRoom: ', err))
     }
 
+
+
     render() {
 
-        console.log('state users: ', this)
-        console.log('state currentRoom: ', this.state.currentRoom)
+        console.log('This: ', this)
+        console.log('this.state: ', this.state)
+        console.log('this.state.currentRoom: ', this.state.currentRoom)
+        console.log('this.state.currentUser.presenceStore: ', this.state.currentUser.presenceStore);
+        // console.log('GETTER: ', aUser);
 
         return (
             <div className="dashboard">
@@ -144,7 +159,7 @@ export class Dashboard extends React.Component {
                     subscribeToRoom={this.subscribeToRoom}
                     rooms={[...this.state.joinableRooms, ...this.state.joinedRooms]}
                     currentUser={this.state.currentUser}
-                    users={this.state.currentRoom.users}
+                    users={this.state.currentUser.users}
                 />
                 <MessageList
                     messages={this.state.messages}

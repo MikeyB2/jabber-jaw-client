@@ -3,10 +3,12 @@ import { API_BASE_URL } from '../config';
 import { normalizeResponseErrors } from './utils';
 
 const createChatId = (user) => {
+    console.log('New User: ', user);
     let Name = user.firstName + ' ' + user.lastName;
     localStorage.setItem('username', user.username)
     localStorage.setItem('Name', Name)
-
+    localStorage.setItem('Email', user.email)
+    alert(`Welcome to Jabber Jaw ${user.username}!`);
 }
 
 export const registerUser = user => dispatch => {
@@ -18,7 +20,6 @@ export const registerUser = user => dispatch => {
         body: JSON.stringify(user),
         success:
             createChatId(user)
-
     })
 
         .then(res => normalizeResponseErrors(res))

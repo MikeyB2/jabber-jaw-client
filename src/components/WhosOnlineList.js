@@ -2,7 +2,7 @@ import React from 'react';
 
 class WhosOnlineList extends React.Component {
     renderUsers() {
-        console.log('users: ', this.props.users)
+
         return (
             <ul>
                 {this.props.users.map((user, index) => {
@@ -24,7 +24,8 @@ class WhosOnlineList extends React.Component {
     }
 
     render() {
-        console.log('users: ', this.props)
+        console.log('WhosOnline this.props: ', this.props)
+        console.log('WhosOnline this.props.presenceState: ', this.props.presenceState)
         if (this.props.users) {
             return this.renderUsers()
         } else {
@@ -60,6 +61,11 @@ class WhosOnlineListItem extends React.Component {
                             this.props.presenceState === 'online' ? '#539eff' : '#414756',
                     }}
                 />
+                {/* <a
+                    onClick={() => this.props.subscribeToRoom(this.props.users)}
+                    href="#">
+                    {this.props.children}
+                </a> */}
                 {this.props.children}
             </li>
         )

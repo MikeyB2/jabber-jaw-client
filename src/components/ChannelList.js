@@ -6,7 +6,7 @@ class ChannelList extends React.Component {
 
 	render() {
 
-		console.log('Channel users: ', this.props)
+		console.log('ChannelList this.props: ', this.props)
 		const orderedRooms = [...this.props.rooms].sort((a, b) => a.id - b.id)
 		return (
 			<div className="rooms-list">
@@ -30,9 +30,10 @@ class ChannelList extends React.Component {
 				</ul>
 				<hr></hr>
 				<h2>Whos online</h2>
+				<hr></hr>
 				<WhosOnlineList
 					currentUser={this.props.currentUser}
-				// users={this.props.currentRoom.users}
+					users={this.props.users}
 				/>
 			</div>
 		)

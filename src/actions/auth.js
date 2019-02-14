@@ -50,11 +50,13 @@ const storeAuthInfo = (authToken, dispatch) => {
 
 const authChatuser = (username) => {
     localStorage.setItem('username', username);
+    alert(`Welcome to Jabber Jaw ${username}!`);
 }
 
 export const login = (username, password) => dispatch => {
     dispatch(authRequest());
     return (
+
         fetch(`${API_BASE_URL}/auth/login`, {
             method: 'POST',
             headers: {

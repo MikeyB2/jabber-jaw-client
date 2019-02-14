@@ -76,8 +76,7 @@ class Navbar extends React.Component {
                             contentLabel="Example Modal"
                         ><h2 ref={subtitle => this.subtitle = subtitle}>Profile</h2>
                             <div>Username: {username}</div>
-                            <div>Name: {Name}</div>
-                            {/* <div>Email: email@example.com</div> */}
+                            <div>Email: test</div>
                             <a href="#"><i className="fas fa-times-circle" onClick={this.closeModal}></i></a>
 
                         </Modal>
